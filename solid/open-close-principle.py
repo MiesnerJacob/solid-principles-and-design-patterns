@@ -1,6 +1,10 @@
-# ##############################
-# Bad Implementation (Open/Close Principle)
-# ##############################
+# Open/Close Principle (OCP)
+
+# Defintion: Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means that you should be able to add new functionality without changing existing code, typically achieved through abstraction and polymorphism.
+
+# ##################
+# Bad Implementation
+# ##################
 
 # This is bad implementation because the AreaCalculator class must be modified if we want to add new shapes!
 
@@ -37,9 +41,9 @@ print("Rectangle area:", rectangle_area)
 print('\n')
 
 
-# ##############################
-# Good Implementation (Open/Close Principle)
-# ##############################
+# ###################
+# Good Implementation
+# ###################
 
 # This implementation is better because in order to create new shapes we just need to create a new shape class (extend), as opposed to modifying an existing object
 
