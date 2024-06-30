@@ -1,6 +1,10 @@
-# ##############################
-# Bad Implementation (Single Responsibility Principle)
-# ##############################
+# Single Responsibility Principle (SRP)
+
+# Defintion: A class should have only one reason to change, meaning it should have only one job or responsibility. This helps to ensure that each class is focused and easier to maintain.
+
+# ##################
+# Bad Implementation
+# ##################
 
 # This ToDoList class handles multiple responsibilities including:
 # - Managing tasks
@@ -48,9 +52,9 @@ todo_list.display_tasks()
 print('\n')
 
 
-# ##############################
-# Good Implementation (Single Responsibility Principle)
-# ##############################
+# ###################
+# Good Implementation
+# ###################
 
 # Responsibilities are separated into unique classes:
 # - TaskManager: Manages tasks
