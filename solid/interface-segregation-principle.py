@@ -1,6 +1,10 @@
-# ##############################
-# Bad Implementation (Interface Segregation Principle)
-# ##############################
+# Interface Segregation Principle (ISP)
+
+# Definition: Clients should not be forced to depend on interfaces they do not use. Instead of one fat interface, many small interfaces are preferred, each providing a specific set of functionalities.
+
+# ##################
+# Bad Implementation
+# ##################
 
 # This is a bad implementation because there are multiple methods in the interface that will not be used by all children
 
@@ -58,9 +62,9 @@ printer_scanner.scan()
 print("\n")
 
 
-# ##############################
-# Good Implementation (Interface Segregation Principle)
-# ##############################
+# ###################
+# Good Implementation
+# ###################
 
 # This is a good implementation because the interfaces only contain methods used by the classes inheriting them
 from abc import ABC, abstractmethod
