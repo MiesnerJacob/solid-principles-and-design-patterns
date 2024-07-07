@@ -23,7 +23,7 @@ if singleton_1 is singleton_2:
 print("\n")
 
 
-# Eager loading version
+# Eager loading version 1
 class SingletonMeta(type):
     _instances = {}
 
@@ -39,7 +39,32 @@ class Singelton(metaclass=SingletonMeta):
         pass
 
 
-print("Creating instance of Singelton class via eager loading!")
+print("Creating instance of Singelton class via eager loading version 1!")
+singleton_1 = Singelton()
+singleton_2 = Singelton()
+if singleton_1 is singleton_2:
+    print("Singelton instance created!")
+print('\n')
+
+
+# Eager loading version 2
+class SingletonMeta(type):
+    _instances = {}
+
+    def __new__(cls, *args, **kwargs):
+        new_class = super().__new__(cls, *args, **kwargs)
+        cls._instances[new_class] = super(SingletonMeta, new_class).__call__()
+        return new_class
+
+    def __call__(cls, *args, **kwargs):
+        return cls._instances[cls]
+
+class Singelton(metaclass=SingletonMeta):
+    def some_business_logic(self):
+        pass
+
+
+print("Creating instance of Singelton class via eager loading version 2!")
 singleton_1 = Singelton()
 singleton_2 = Singelton()
 if singleton_1 is singleton_2:
