@@ -14,8 +14,9 @@ class ClassicSingleton:
         return cls._instance
     
 
-print("Creating instance of Singelton class!")
-singleton_1 = ClassicSingleton.get_instance()
-singleton_2 = ClassicSingleton.get_instance()
-if singleton_1 is singleton_2:
-    print("Singelton instance created!")
+if __name__ == "__main__":
+    print("Creating instance of Singelton class!")
+    singleton_1 = ClassicSingleton.get_instance()
+    singleton_2 = ClassicSingleton.get_instance()
+    if singleton_1 is singleton_2:
+        print("Singelton instance created!")

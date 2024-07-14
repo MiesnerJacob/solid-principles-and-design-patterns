@@ -21,11 +21,12 @@ def start_vehicle(vehicle: Vehicle):
     print(vehicle.move())
 
 
-# Test your implementation
-car = Car()
-bicycle = Bicycle()
-boat = Boat()
+if __name__ == "__main__":
+    # Test your implementation
+    car = Car()
+    bicycle = Bicycle()
+    boat = Boat()
 
-start_vehicle(car)
-start_vehicle(bicycle)
-start_vehicle(boat)
+    start_vehicle(car)
+    start_vehicle(bicycle)
+    start_vehicle(boat)

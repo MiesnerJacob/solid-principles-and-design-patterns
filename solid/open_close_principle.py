@@ -26,19 +26,21 @@ class Rectangle:
         self.width = width
         self.height = height
 
-# Set Up
-print("Bad Implementaton (Open/Close Principle)")
-area_calculator = AreaCalculator()
-circle = Circle(radius=1)
-rectangle = Rectangle(width=3, height=1)
 
-# Calculate areas for shapes
-circle_area = area_calculator.area(circle)
-print("Circle area:", circle_area)
+if __name__ == "__main__":
+    # Set Up
+    print("Bad Implementaton (Open/Close Principle)")
+    area_calculator = AreaCalculator()
+    circle = Circle(radius=1)
+    rectangle = Rectangle(width=3, height=1)
 
-rectangle_area = area_calculator.area(rectangle)
-print("Rectangle area:", rectangle_area)
-print('\n')
+    # Calculate areas for shapes
+    circle_area = area_calculator.area(circle)
+    print("Circle area:", circle_area)
+
+    rectangle_area = area_calculator.area(rectangle)
+    print("Rectangle area:", rectangle_area)
+    print('\n')
 
 
 # ###################
@@ -72,16 +74,18 @@ class Rectangle(Shape):
 class AreaCalculator:
     def area(self, shape):
         return shape.area()
-        
-# Set Up
-print("Good Implementaton (Open/Close Principle)")
-area_calculator = AreaCalculator()
-circle = Circle(radius=1)
-rectangle = Rectangle(width=3, height=1)
 
-# Calculate areas for shapes
-circle_area = area_calculator.area(circle)
-print("Circle area:", circle_area)
 
-rectangle_area = area_calculator.area(rectangle)
-print("Rectangle area:", rectangle_area)
+if __name__ == "__main__":
+    # Set Up
+    print("Good Implementaton (Open/Close Principle)")
+    area_calculator = AreaCalculator()
+    circle = Circle(radius=1)
+    rectangle = Rectangle(width=3, height=1)
+
+    # Calculate areas for shapes
+    circle_area = area_calculator.area(circle)
+    print("Circle area:", circle_area)
+
+    rectangle_area = area_calculator.area(rectangle)
+    print("Rectangle area:", rectangle_area)
