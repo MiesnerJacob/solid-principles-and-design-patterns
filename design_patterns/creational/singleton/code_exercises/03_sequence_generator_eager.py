@@ -19,12 +19,12 @@ class SequenceGenerator(metaclass=SequenceGeneratorMeta):
     
 
 print("Creating instance of Singelton class!")
-sequence_genetator_1 = SequenceGenerator()
-sequence_genetator_2 = SequenceGenerator()
-sequence_genetator_3 = SequenceGenerator()
+sequence_generator_1 = SequenceGenerator()
+sequence_generator_2 = SequenceGenerator()
+sequence_generator_3 = SequenceGenerator()
 
 
 print("Calling singleton to confirm correct implementation...")
-sequence_genetator_1.getNextNumber()
-sequence_genetator_2.getNextNumber()
-sequence_genetator_3.getNextNumber()
+sequence_generator_1.getNextNumber()
+sequence_generator_2.getNextNumber()
+sequence_generator_3.getNextNumber()
