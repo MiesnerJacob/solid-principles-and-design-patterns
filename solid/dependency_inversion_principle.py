@@ -27,14 +27,16 @@ class NotificationService:
         elif method == "sms":   
             self.sms_service.send_sms(message, reciever)
 
-# Set Up
-print("Bad Implementation (Dependency Inversion Principle)")
-notification_service = NotificationService()
 
-# Method Execution
-notification_service.send_notification("Hello!", "Jacob", "email")
-notification_service.send_notification("Hello!", "Jacob", "sms")
-print("\n")
+if __name__ == "__main__":
+    # Set Up
+    print("Bad Implementation (Dependency Inversion Principle)")
+    notification_service = NotificationService()
+
+    # Method Execution
+    notification_service.send_notification("Hello!", "Jacob", "email")
+    notification_service.send_notification("Hello!", "Jacob", "sms")
+    print("\n")
 
 
 # ###################
@@ -65,13 +67,14 @@ class NotificationService:
         self.message_service.send(message, reciever)
 
 
-# Set Up
-print("Good Implementation (Dependency Inversion Principle)")
-email_service = EmailService()
-sms_service = SMSService()
-notification_service_email = NotificationService(email_service)
-notification_service_sms = NotificationService(sms_service)
+if __name__ == "__main__":
+    # Set Up
+    print("Good Implementation (Dependency Inversion Principle)")
+    email_service = EmailService()
+    sms_service = SMSService()
+    notification_service_email = NotificationService(email_service)
+    notification_service_sms = NotificationService(sms_service)
 
-# Method Execution
-notification_service_email.send_notification("Hello!", "Jacob")
-notification_service_sms.send_notification("Hello!", "Jacob")
+    # Method Execution
+    notification_service_email.send_notification("Hello!", "Jacob")
+    notification_service_sms.send_notification("Hello!", "Jacob")

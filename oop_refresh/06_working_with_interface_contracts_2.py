@@ -21,11 +21,12 @@ def display_battery_life(device: ElectronicDevice):
     print(device.battery_life())
 
 
-# Test your implementation
-smartphone = Smartphone()
-laptop = Laptop()
-smartwatch = Smartwatch()
+if __name__ == "__main__":
+    # Test your implementation
+    smartphone = Smartphone()
+    laptop = Laptop()
+    smartwatch = Smartwatch()
 
-display_battery_life(smartphone)
-display_battery_life(laptop)
-display_battery_life(smartwatch)
+    display_battery_life(smartphone)
+    display_battery_life(laptop)
+    display_battery_life(smartwatch)

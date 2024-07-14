@@ -37,11 +37,12 @@ class Circle(Shape):
         return 2 * math.pi * self.radius
 
 
-# Test your implementation
-rectangle1 = Rectangle("red", 4, 5)
-print(rectangle1.area())  # Should output 20
-print(rectangle1.perimeter())  # Should output 18
+if __name__ == "__main__":
+    # Test your implementation
+    rectangle1 = Rectangle("red", 4, 5)
+    print(rectangle1.area())  # Should output 20
+    print(rectangle1.perimeter())  # Should output 18
 
-circle1 = Circle("blue", 3)
-print(circle1.area())  # Should output approximately 28.274333882308138
-print(circle1.perimeter())  # Should output approximately 18.84955592153876
+    circle1 = Circle("blue", 3)
+    print(circle1.area())  # Should output approximately 28.274333882308138
+    print(circle1.perimeter())  # Should output approximately 18.84955592153876

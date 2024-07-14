@@ -44,22 +44,24 @@ class PrinterScanner(IMultiFunctionDevice):
     def scan(self):
         print("Scanning...")
 
-# Set Up
-print("Bad Implementation (Interface Segregation Principle)")
-printer = Printer()
-scanner = Scanner()
-copier = Copier()
-fax = Fax()
-printer_scanner = PrinterScanner()
 
-# Method Execution
-printer.print()
-scanner.scan()
-copier.copy()
-fax.fax()
-printer_scanner.print()
-printer_scanner.scan()
-print("\n")
+if __name__ == "__main__":
+    # Set Up
+    print("Bad Implementation (Interface Segregation Principle)")
+    printer = Printer()
+    scanner = Scanner()
+    copier = Copier()
+    fax = Fax()
+    printer_scanner = PrinterScanner()
+
+    # Method Execution
+    printer.print()
+    scanner.scan()
+    copier.copy()
+    fax.fax()
+    printer_scanner.print()
+    printer_scanner.scan()
+    print("\n")
 
 
 # ###################
@@ -112,18 +114,20 @@ class PrinterScanner(IPrinter, IScanner):
     def scan(self):
         print("Scanning...")
 
-# Set Up
-print("Good Implementation (Interface Segregation Principle)")
-printer = Printer()
-scanner = Scanner()
-copier = Copier()
-fax = Fax()
-printer_scanner = PrinterScanner()
 
-# Method Execution
-printer.print()
-scanner.scan()
-copier.copy()
-fax.fax()
-printer_scanner.print()
-printer_scanner.scan()
+if __name__ == "__main__":
+    # Set Up
+    print("Good Implementation (Interface Segregation Principle)")
+    printer = Printer()
+    scanner = Scanner()
+    copier = Copier()
+    fax = Fax()
+    printer_scanner = PrinterScanner()
+
+    # Method Execution
+    printer.print()
+    scanner.scan()
+    copier.copy()
+    fax.fax()
+    printer_scanner.print()
+    printer_scanner.scan()

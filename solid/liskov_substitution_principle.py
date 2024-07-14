@@ -15,14 +15,16 @@ class Bird:
 class Penguin(Bird):
     def fly(self):
         print("I can't fly")
-        
-# Set Up
-print("Bad Implementation (Liskov Substitution Principle)")
-penguin = Penguin()
 
-# Method Execution
-penguin.fly()
-print('\n')
+
+if __name__ == "__main__":
+    # Set Up
+    print("Bad Implementation (Liskov Substitution Principle)")
+    penguin = Penguin()
+
+    # Method Execution
+    penguin.fly()
+    print('\n')
 
 
 # ###################
@@ -48,9 +50,11 @@ class NonFlyingBird(Bird):
 class Penguin(NonFlyingBird):
     pass
 
-# Set Up
-print("Good Implementation (Liskov Substitution Principle)")
-penguin = Penguin()
 
-# Method Execution
-penguin.fly()
+if __name__ == "__main__":
+    # Set Up
+    print("Good Implementation (Liskov Substitution Principle)")
+    penguin = Penguin()
+
+    # Method Execution
+    penguin.fly()
