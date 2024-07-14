@@ -15,8 +15,9 @@ class Singleton(metaclass=SingletonMeta):
         pass
 
 
-print("Creating instance of Singelton class via eager loading version 1!")
-singleton_1 = Singleton()
-singleton_2 = Singleton()
-if singleton_1 is singleton_2:
-    print("Singelton instance created!")
+if __name__ == "__main__":
+    print("Creating instance of Singelton class via eager loading version 1!")
+    singleton_1 = Singleton()
+    singleton_2 = Singleton()
+    if singleton_1 is singleton_2:
+        print("Singelton instance created!")

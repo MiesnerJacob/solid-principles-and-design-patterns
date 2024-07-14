@@ -2,6 +2,7 @@
 
 import logging
 
+
 # Set up the logger
 logger = logging.getLogger('my_logger')
 logger.setLevel(logging.DEBUG)

@@ -35,13 +35,15 @@ sample_config = {
 with open("config.json", "w") as f:
     json.dump(sample_config, f)
 
-# Testing the singleton behavior and config management
-config1 = ConfigManager()
-config2 = ConfigManager()
 
-print(f"config1: {id(config1)}")
-print(f"config2: {id(config2)}")
+if __name__ == "__main__":
+    # Testing the singleton behavior and config management
+    config1 = ConfigManager()
+    config2 = ConfigManager()
 
-config1.load_config("config.json")
-print(config1.get_setting("database"))
-print(config2.get_setting("api"))
+    print(f"config1: {id(config1)}")
+    print(f"config2: {id(config2)}")
+
+    config1.load_config("config.json")
+    print(config1.get_setting("database"))
+    print(config2.get_setting("api"))
