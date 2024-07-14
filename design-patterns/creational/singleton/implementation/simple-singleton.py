@@ -11,6 +11,7 @@ class Singleton:
     
 
 print("Creating instance of Singelton class!")
-singelton_1 = Singleton()
-if singelton_1:
+singleton_1 = Singleton()
+singleton_2 = Singleton()
+if singleton_1 is singleton_2:
     print("Singelton instance created!")
