@@ -22,18 +22,19 @@ class SequenceGenerator(metaclass=SequenceGeneratorMeta):
             print(cls._count)
 
 
-print("Checking if implementation of thread safety and counter...")
-def get_singleton_instance():
-    SequenceGenerator().getNextNumber()
+if __name__ == "__main__":
+    print("Checking if implementation of thread safety and counter...")
+    def get_singleton_instance():
+        SequenceGenerator().getNextNumber()
 
-threads = []
+    threads = []
 
-for i in range(10):
-    t = threading.Thread(target=get_singleton_instance)
-    threads.append(t)
+    for i in range(10):
+        t = threading.Thread(target=get_singleton_instance)
+        threads.append(t)
 
-for t in threads:
-    t.start()
+    for t in threads:
+        t.start()
 
-for t in threads:
-    t.join()
+    for t in threads:
+        t.join()

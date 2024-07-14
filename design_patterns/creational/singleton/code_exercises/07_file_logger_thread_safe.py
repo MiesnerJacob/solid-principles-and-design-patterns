@@ -21,19 +21,21 @@ class FileAuditManager:
             with open(cls._instance._file_name, 'a') as file:
                 file.write(f"{timestamp}: {message}\n")
 
-# Testing the logger
-def write_to_logs():
-    logger = FileAuditManager()
-    logger.log_message("Test message for thread-safe metaclass eager loading implementation.")
 
-threads = []
+if __name__ == "__main__":
+    # Testing the logger
+    def write_to_logs():
+        logger = FileAuditManager()
+        logger.log_message("Test message for thread-safe metaclass eager loading implementation.")
 
-for i in range(10):
-    t = threading.Thread(target=write_to_logs)
-    threads.append(t)
+    threads = []
 
-for t in threads:
-    t.start()
+    for i in range(10):
+        t = threading.Thread(target=write_to_logs)
+        threads.append(t)
 
-for t in threads:
-    t.join()
+    for t in threads:
+        t.start()
+
+    for t in threads:
+        t.join()

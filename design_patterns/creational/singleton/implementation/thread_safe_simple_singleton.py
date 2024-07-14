@@ -13,8 +13,9 @@ class ThreadSafeSingleton:
         return cls._instance
     
 
-print("Creating instance of Singelton class!")
-singleton_1 = ThreadSafeSingleton()
-singleton_2 = ThreadSafeSingleton()
-if singleton_1 is singleton_2:
-    print("Singelton instance created!")
+if __name__ == "__main__":
+    print("Creating instance of Singelton class!")
+    singleton_1 = ThreadSafeSingleton()
+    singleton_2 = ThreadSafeSingleton()
+    if singleton_1 is singleton_2:
+        print("Singelton instance created!")

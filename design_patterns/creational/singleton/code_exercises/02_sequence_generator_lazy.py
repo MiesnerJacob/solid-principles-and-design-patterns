@@ -15,13 +15,14 @@ class SequenceGenerator:
         print(cls._count)
     
 
-print("Creating instance of Singelton class!")
-sequence_generator_1 = SequenceGenerator()
-sequence_generator_2 = SequenceGenerator()
-sequence_generator_3 = SequenceGenerator()
+if __name__ == "__main__":
+    print("Creating instance of Singelton class!")
+    sequence_generator_1 = SequenceGenerator()
+    sequence_generator_2 = SequenceGenerator()
+    sequence_generator_3 = SequenceGenerator()
 
 
-print("Calling singleton to confirm correct implementation...")
-sequence_generator_1.getNextNumber()
-sequence_generator_2.getNextNumber()
-sequence_generator_3.getNextNumber()
+    print("Calling singleton to confirm correct implementation...")
+    sequence_generator_1.getNextNumber()
+    sequence_generator_2.getNextNumber()
+    sequence_generator_3.getNextNumber()

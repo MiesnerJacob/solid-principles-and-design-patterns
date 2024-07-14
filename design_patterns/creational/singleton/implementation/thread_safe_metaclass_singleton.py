@@ -16,20 +16,21 @@ class Singleton(metaclass=ThreadSafeSingleton):
     pass
 
 
-# Prove the implementation is thread safe
-print("Creating instance of Singelton class!")
-def get_singleton_instance():
-    s = Singleton()
-    print(s)
+if __name__ == "__main__":
+    # Prove the implementation is thread safe
+    print("Creating instance of Singelton class!")
+    def get_singleton_instance():
+        s = Singleton()
+        print(s)
 
-threads = []
+    threads = []
 
-for i in range(10):
-    t = threading.Thread(target=get_singleton_instance)
-    threads.append(t)
+    for i in range(10):
+        t = threading.Thread(target=get_singleton_instance)
+        threads.append(t)
 
-for t in threads:
-    t.start()
+    for t in threads:
+        t.start()
 
-for t in threads:
-    t.join()
+    for t in threads:
+        t.join()

@@ -50,12 +50,13 @@ class Fraction:
         return f"{self.__numerator}/{self.__denominator}"
 
 
-# Test your implementation
-fraction1 = Fraction(1, 4)
-fraction2 = Fraction(1, 2)
+if __name__ == "__main__":
+    # Test your implementation
+    fraction1 = Fraction(1, 4)
+    fraction2 = Fraction(1, 2)
 
-fraction3 = fraction1.add(fraction2)
-print(fraction3)  # Should output "6/8"
+    fraction3 = fraction1.add(fraction2)
+    print(fraction3)  # Should output "6/8"
 
-fraction4 = fraction3.simplify()
-print(fraction4)  # Should output "3/4"
+    fraction4 = fraction3.simplify()
+    print(fraction4)  # Should output "3/4"

@@ -10,8 +10,9 @@ class Singleton:
         return cls._instance
     
 
-print("Creating instance of Singelton class!")
-singleton_1 = Singleton()
-singleton_2 = Singleton()
-if singleton_1 is singleton_2:
-    print("Singelton instance created!")
+if __name__ == "__main__":
+    print("Creating instance of Singelton class!")
+    singleton_1 = Singleton()
+    singleton_2 = Singleton()
+    if singleton_1 is singleton_2:
+        print("Singelton instance created!")

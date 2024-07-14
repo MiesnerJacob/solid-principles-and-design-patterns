@@ -78,10 +78,12 @@ class MyLogger(BaseLogger):
     def critical(self, message: str):
         self._logger.critical(message)
 
-# Testing out the logger
-logger = MyLogger()
-logger.debug('This is a debug message')
-logger.info('This is an info message')
-logger.warning('This is a warning message')
-logger.error('This is an error message')
-logger.critical('This is a critical message')
+
+if __name__ == "__main__":
+    # Testing out the logger
+    logger = MyLogger()
+    logger.debug('This is a debug message')
+    logger.info('This is an info message')
+    logger.warning('This is a warning message')
+    logger.error('This is an error message')
+    logger.critical('This is a critical message')

@@ -33,23 +33,25 @@ class ToDoList:
         task = input("Enter the task to remove: ")
         self.delete_task(task)
 
-# Setup
-print("Bad Implementaton (Single Responsiblity Principle)")
-todo_list = ToDoList()
 
-# Adding tasks
-todo_list.input_task()  # Example: Enter a task: Buy groceries
-todo_list.input_task()  # Example: Enter a task: Clean the house
+if __name__ == "__main__":
+    # Setup
+    print("Bad Implementaton (Single Responsiblity Principle)")
+    todo_list = ToDoList()
 
-# Display tasks
-todo_list.display_tasks()
+    # Adding tasks
+    todo_list.input_task()  # Example: Enter a task: Buy groceries
+    todo_list.input_task()  # Example: Enter a task: Clean the house
 
-# Remove tasks
-todo_list.remove_task()  # Example: Enter the task to remove: Buy groceries
+    # Display tasks
+    todo_list.display_tasks()
 
-# Display tasks again
-todo_list.display_tasks()
-print('\n')
+    # Remove tasks
+    todo_list.remove_task()  # Example: Enter the task to remove: Buy groceries
+
+    # Display tasks again
+    todo_list.display_tasks()
+    print('\n')
 
 
 # ###################
@@ -86,25 +88,27 @@ class TaskInput:
     def remove_task():
         return input("Enter the task to remove: ")
 
-# Setup
-print("Good Implementaton (Single Responsiblity Principle)")
-task_manager = TaskManager()
-task_presenter = TaskPresenter()
-task_input = TaskInput()
 
-# Adding tasks
-task = task_input.input_task()  # Example: Enter a task: Buy groceries
-task_manager.add_tasks(task)
+if __name__ == "__main__":
+    # Setup
+    print("Good Implementaton (Single Responsiblity Principle)")
+    task_manager = TaskManager()
+    task_presenter = TaskPresenter()
+    task_input = TaskInput()
 
-task = task_input.input_task()  # Example: Enter a task: Clean the house
-task_manager.add_tasks(task)
+    # Adding tasks
+    task = task_input.input_task()  # Example: Enter a task: Buy groceries
+    task_manager.add_tasks(task)
 
-# Display tasks
-task_presenter.display_tasks(task_manager.tasks)
+    task = task_input.input_task()  # Example: Enter a task: Clean the house
+    task_manager.add_tasks(task)
 
-# Remove task
-task = task_input.remove_task()  # Example: Enter the task to remove: Buy groceries
-task_manager.delete_task(task)
+    # Display tasks
+    task_presenter.display_tasks(task_manager.tasks)
 
-# Display tasks again
-task_presenter.display_tasks(task_manager.tasks)
+    # Remove task
+    task = task_input.remove_task()  # Example: Enter the task to remove: Buy groceries
+    task_manager.delete_task(task)
+
+    # Display tasks again
+    task_presenter.display_tasks(task_manager.tasks)

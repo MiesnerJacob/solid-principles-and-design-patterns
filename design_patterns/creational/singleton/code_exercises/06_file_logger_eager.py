@@ -21,6 +21,8 @@ class FileAuditManager(metaclass=SingletonMeta):
         with open(self._file_name, 'a') as file:
             file.write(f"{timestamp}: {message}\n")
 
-# Testing the logger
-logger = FileAuditManager()
-logger.log_message("Test message for eager loading implementation.")
+
+if __name__ == "__main__":
+    # Testing the logger
+    logger = FileAuditManager()
+    logger.log_message("Test message for eager loading implementation.")
