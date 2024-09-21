@@ -79,12 +79,13 @@ def print_contact_data(contacts_source: ContactsAdapter):
         
 
 # Example usage
-xml_reader = XMLReader("data/contacts.xml")
-xml_adapter = XMLContactsAdapter(xml_reader)
-print_contact_data(xml_adapter)
+if __name__ == "__main__":
+    xml_reader = XMLReader("data/contacts.xml")
+    xml_adapter = XMLContactsAdapter(xml_reader)
+    print_contact_data(xml_adapter)
 
-json_reader = JSONReader("data/contacts.json")
-json_adapter = JSONContactsAdapter(json_reader)
-print_contact_data(json_adapter)
+    json_reader = JSONReader("data/contacts.json")
+    json_adapter = JSONContactsAdapter(json_reader)
+    print_contact_data(json_adapter)
 
         
