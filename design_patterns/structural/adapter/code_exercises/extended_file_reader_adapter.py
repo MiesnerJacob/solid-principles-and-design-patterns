@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List
 import xml.etree.ElementTree as ET
 import json
+import csv
+
 
 class Contact:
     def __init__(self, full_name: str, email: str, phone_number: str, is_friend: bool):
@@ -60,6 +62,15 @@ class JSONContactsAdapter(ContactsAdapter):
             contacts.append(contact)
         return contacts
     
+class CSVContactsAdapter(ContactsAdapter):
+    def get_contacts(self) -> List[Contact]:
+        csv_data = self.data_source.read()
+        contacts = []
+        for row in csv_data[1:]:  # Skip header row
+            full_name, email, phone_number, is_friend = row
+            contact = Contact(full_name, email, phone_number, is_friend.lower() == 'true')
+            contacts.append(contact)
+        return contacts
 
 class XMLReader(FileReader):
     def read(self) -> str:
@@ -72,6 +83,11 @@ class JSONReader(FileReader):
         with open(self.file_name, "r") as f:
             return f.read()
         
+class CSVReader(FileReader):
+    def read(self) -> List[List[str]]:
+        with open(self.file_name, "r") as f:
+            return list(csv.reader(f))
+
 def print_contact_data(contacts_source: ContactsAdapter):
     contacts = contacts_source.get_contacts()
     for contact in contacts:
@@ -88,4 +104,6 @@ if __name__ == "__main__":
     json_adapter = JSONContactsAdapter(json_reader)
     print_contact_data(json_adapter)
 
-        
+    csv_reader = CSVReader("../data/contacts.csv")
+    csv_adapter = CSVContactsAdapter(csv_reader)
+    print_contact_data(csv_adapter)
