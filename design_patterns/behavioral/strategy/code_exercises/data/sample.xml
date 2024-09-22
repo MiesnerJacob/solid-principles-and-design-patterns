@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+  <person name="John Doe" age="30" city="New York" />
+  <person name="Jane Smith" age="25" city="Los Angeles" />
+  <person name="Bob Johnson" age="35" city="Chicago" />
+</people>
